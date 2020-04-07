@@ -43,6 +43,5 @@ void EXERCICIO2()
                 printf("valor invalido\n");
             }
         } while (flag == 0);
-        
-    return 0;
+    
 }
