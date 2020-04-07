@@ -1,3 +1,4 @@
+#include "menu.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,18 +10,28 @@
 // limpa a tela
 #define cleanScreen system("clear")
 
-char *menu(char *options[], int size)
+char *options[100];
+int cont = 0;
+void (*functions[100])(void);
+
+void menuAddItem(char *op, void (*func)())
 {
+    options[cont] = op;
+    (functions[cont]) = func;
+    cont++;
+}
+
+void menu() {
     // opção digiada pelo usuario
     int op;
 
     // limpa a tela
-    cleanScreen;
+    // cleanScreen;
 
     do
     {
         // percorrer e imprimir todas as opções do menu
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < cont; i++)
             printf("%d - %s\n", i+1, options[i]);
         
         // pede que o usuario digite uma opção
@@ -31,16 +42,16 @@ char *menu(char *options[], int size)
 
         // checa se a opção é valida se não 
         // exibe uma mensagem
-        if(op <= 0 || op > size)
+        if(op <= 0 || op > cont)
         {
             cleanScreen;
             printf("Digite uma opção valida!!\n\n");
         }
 
     // não sai ate que seja digitada uma opção valida
-    } while (op <= 0 || op > size);
+    } while (op <= 0 || op > cont);
     
-    // retorna conteudo do vetor 
-    // com a opção escolhida
-    return options[op-1];
+    // executa a função correspondente
+    // a opção escolhida pelo usuario
+    (functions[op-1])();
 }
