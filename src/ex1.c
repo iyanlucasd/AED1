@@ -36,5 +36,4 @@ void EXERCICIO1()
         scanf("%i", &flag);
     } while (flag != 0);
     printf("saindo do programa...\n");
-return 0;
 }
