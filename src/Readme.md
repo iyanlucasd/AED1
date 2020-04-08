@@ -18,3 +18,8 @@ zoi ta dando problema na linha 33,5 no "main.c" ajuda nois plox e se tu achar e 
 o zoi eu add ate o exercicio 4, só que, ele n ta funfando, veja q quando tu compila ele e faz o programa, ele pula o scanf e printf da linha 42 e 43, help plox ;-;
 
 --------------------------------------------------------------------
+
+07/04/2020 -- 21:15 - exebixel
+
+cara, sobre o exercicio 4 o while tava errado, e tava com erro de buffer,
+só coloquei uma função pra limpar o buffer, mudei a condição do while e coloquei um toupper no 'ver'

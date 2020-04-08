@@ -5,6 +5,9 @@
 #include <locale.h>
 #include <stdbool.h>
 
+// fflish(stdin) buffada
+#define cleanBuffer while(getchar() != '\n')
+
 void EXERCICIO4()
 {
     int valor;
@@ -39,8 +42,10 @@ void EXERCICIO4()
             printf("valor invalido!");
         }
         
+        cleanBuffer;
         printf("deseja continuar?\n(S/N)\n");
         scanf("%c", &ver);
-    } while (ver = 'S');
+        ver = toupper(ver);
+    } while (ver == 'S');
 
 }
