@@ -5,6 +5,7 @@
 #include "ex2.h"
 #include "ex3.h"
 #include "ex4.h"
+#include "ex5.h"
 
 int main()
 {
@@ -15,6 +16,7 @@ int main()
     menuAddItem("Exercicio 2", EXERCICIO2);
     menuAddItem("Exercicio 3", EXERCICIO3);
     menuAddItem("Exercicio 4", EXERCICIO4);
+    menuAddItem("Exercicio 5", EXERCICIO5);
 
     // mostra o menu
     // e executa a opção escolhida pelo usuario
