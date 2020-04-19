@@ -1,5 +1,5 @@
-#ifndef EXERCICIO3_H
-#define EXERCICIO3_H
+#ifndef EXERCICIO6_H
+#define EXERCICIO6_H
 
 /*
  * Função que imprime as opções do usuario 
@@ -8,6 +8,6 @@
  * e o número de opções 
  * retorna a string da opção escolhida
  */
-void EXERCICIO3();
+void EXERCICIO6();
 
 #endif

@@ -10,32 +10,18 @@
 
 void EXERCICIO5()
 {
-    int salariominimo = 0;
-    float salario;
-    float menorsalario = 1045.00;
-    int count;
+    int x;
+    int y;
 
-    printf("reajuste salarial\n");
-    printf("digite quantos funcionarios estao na firma\n");
-    scanf("%i", &count);
-    for (int i = 0; i < count; i++)
+    printf("digite a base\n");
+    scanf("%i", &x);
+    printf("digite o expoente\n");
+    scanf("%i", &y);
+    int aux;
+    aux = x;
+    for (int i = 1; i < y; i++)
     {
-        printf("digite o seu salario:\t");
-        scanf("%f", &salario);
-        if (salario <= 1045.00)
-        {
-            salariominimo++;
-            if (salario < menorsalario)
-            {
-                menorsalario = salario;
-            }
-            
-        }
-        
+        x = x * aux;
     }
-    
-    printf("o salario minimo esta em R$1045,00\n");
-    printf("existem %i funcionarios com o salario minimo na empresa\n", salariominimo);
-    printf("o menor salario eh: %f", menorsalario);
-
+    printf("o resultado eh: %i\n", x);
 }
