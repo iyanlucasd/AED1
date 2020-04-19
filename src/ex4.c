@@ -10,42 +10,15 @@
 
 void EXERCICIO4()
 {
-    int valor;
-    int par = 0;
-    int impar = 0;
-    char ver;
 
-    do
+    int x;
+    printf("calculo do fatorial\n");
+    printf("digite o numero\n");
+    scanf("%i", &x);
+    for (int i = 1; i < x; i++)
     {
-        printf("digite um numero\n");
-        scanf("%i", &valor);
-        if (valor%2 == 0)
-        {
-            printf("o valor eh par\n");
-            if (valor > par)
-            {
-                par = valor;
-            }
-            
-        }
-        else if (valor%2 == 1)
-        {
-            printf("o valor eh impar\n");
-            if (valor > impar)
-            {
-                impar = valor;
-            }
-            
-        }
-        else
-        {
-            printf("valor invalido!");
-        }
-        
-        cleanBuffer;
-        printf("deseja continuar?\n(S/N)\n");
-        scanf("%c", &ver);
-        ver = toupper(ver);
-    } while (ver == 'S');
+        x = i * x;
+    }
+    printf("o fatorial eh %i\n", x);
 
 }
