@@ -4,31 +4,46 @@
 #include <ctype.h>
 #include <locale.h>
 #include <stdbool.h>
-//fflush(stdin) buffada
-#define cleanBuffer while (getchar() != '\n')
 
-//funcao para calcular se eh par ou impar
+/*
+ * ASSINATURA DA FUNCAO: float maiorex3(float x, float y)
+ * DATA DE ELABORACAO: 23/04/2020
+ * AUTOR: IYAN LUCAS DUARTE MARQUES
+ * OBJETIVO: DESCOBRIR O MAIOR VALOR
+ * DADOS DE ENTRADA (ARGUMENTOS): NUMEROS DIGITADOS PELO USUARIO
+ * DADOS DE SAIDA (RETORNO DA FUNCAO): MAIOR NUMERO
+ */
+
+//funcao para calculo do perimetro do quadrado
+float maiorex3(float x, float y)
+{
+    float maiorque = 0;
+    //if para se o primeiro for maior que o segundo
+    if (x>y)
+    {
+        maiorque = x;
+    }
+    // if para se o segundo for maior que o primeiro
+    else if (y>x)
+    {
+        maiorque = y;
+    }
+    //else se os valores forem iguais
+    else
+    {
+        printf("os valores sao iguais\n");
+    }
+    return maiorque;
+}
+
+
 void EXERCICIO3()
 {
-    //variavel do numero
-    int x;
+    //var para os dois valores
+    float x;
+    float y;
 
-    //capturar o valor do numero
-    printf("verifique se o numero eh par ou impar\n");
-    printf("digite o numero\n");
-    scanf("%i", &x);
-    //if para descobrir se o resto da divisao por 2 eh 0 ou 1
-    //se o resto eh 0, o numero eh par
-    if (x % 2 == 0)
-    {
-        printf("o numero eh par\n");
-    }
-    // se o resto eh 1, o numero eh impar
-    else if (x % 2 == 1)
-    {
-        printf("o numero eh impar\n");
-    }
-    
-
-    
+    leitura(&x, &y);
+    maiorex3(x, y);
+    SHOW(maiorex3);
 }

@@ -8,6 +8,7 @@
  * e o número de opções 
  * retorna a string da opção escolhida
  */
+void maiorex3(float x, float y);
 void EXERCICIO3();
 
 #endif

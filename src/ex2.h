@@ -8,6 +8,10 @@
  * e o número de opções 
  * retorna a string da opção escolhida
  */
+
+void leitura(float *pont1, float *pont2);
+void maior(float *pont1, float *pont2);
+void SHOW(float *pont1);
 void EXERCICIO2();
 
 #endif
