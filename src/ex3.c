@@ -5,45 +5,96 @@
 #include <locale.h>
 #include <stdbool.h>
 
-/*
- * ASSINATURA DA FUNCAO: float maiorex3(float x, float y)
- * DATA DE ELABORACAO: 23/04/2020
- * AUTOR: IYAN LUCAS DUARTE MARQUES
- * OBJETIVO: DESCOBRIR O MAIOR VALOR
- * DADOS DE ENTRADA (ARGUMENTOS): NUMEROS DIGITADOS PELO USUARIO
- * DADOS DE SAIDA (RETORNO DA FUNCAO): MAIOR NUMERO
- */
-
-//funcao para calculo do perimetro do quadrado
-float maiorex3(float x, float y)
+void media(int n, double *vet, double *p)
 {
-    float maiorque = 0;
-    //if para se o primeiro for maior que o segundo
-    if (x>y)
+    double m=0;
+    double soma = 0;
+    double maiorm = 0;
+    double menorm = 0; 
+    double sub[n];
+    int flag = 0;
+    
+    for (int i = 0; i < n; i++)
     {
-        maiorque = x;
+        soma = soma + vet[i];
     }
-    // if para se o segundo for maior que o primeiro
-    else if (y>x)
+    printf("soma = %f\n", soma);
+    
+    m = soma/n;
+    
+    printf("media = %f\n", m);
+    for (int i = 0; i < n; i++)
     {
-        maiorque = y;
+        sub[i] = vet[i] - m;
     }
-    //else se os valores forem iguais
+    for (int i = 0; i < n; i++)
+    {
+        if (sub[i] <= 0)
+        {
+            menorm = vet[i];
+            flag = i;
+        }
+
+    }
+    maiorm = vet[flag + 1];
+    
+    printf("maior %f, menor %f\n", maiorm, menorm);
+    if ((maiorm - m) < (m - menorm))
+    {
+        printf("o numero %f eh mais proximo que o numero %f\n", maiorm, menorm);
+        *p = maiorm;
+    }
     else
     {
-        printf("os valores sao iguais\n");
+        printf("o numero %f eh mais proximo que o numero %f\n", menorm, maiorm);
+        *p = menorm;
     }
-    return maiorque;
+    
 }
-
 
 void EXERCICIO3()
 {
-    //var para os dois valores
-    float x;
-    float y;
+    int n;
+    double i;
+    printf("digite quantos numeros deseja inserir\n");
+    scanf("%i", &n);
 
-    leitura(&x, &y);
-    maiorex3(x, y);
-    SHOW(maiorex3);
+    double vet[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("digite um numero\n");
+        scanf("%lf", &vet[i]);
+    }
+
+    int volta;
+    int troca;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (volta = 0; volta < n - i - 1; volta++)
+        {
+            if (vet[volta] > vet[volta + 1])
+            {
+                troca = vet[volta];
+                vet[volta] = vet[volta + 1];
+                vet[volta + 1] = troca; 
+            }
+            
+        }
+        
+    }
+    
+    printf("Sorted list in ascending order:\n");
+
+    for (int i = 0; i < n; i++)
+    {
+
+        printf("%f\n", vet[i]);
+    }
+
+
+    media(n, vet, &i);
+    printf("i = %f\n", i);
 }
+
